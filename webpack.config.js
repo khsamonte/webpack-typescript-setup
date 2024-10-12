@@ -3,9 +3,12 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); // Already installed p
 const webpack = require("webpack"); // We'll use this for the HMR plugin
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: {
+    main: "./src/index.ts",
+    admin: "./src/admin.ts",
+  },
   output: {
-    filename: "bundle.js",
+    filename: "[name].bundle.js", // [name] will use the entry point name ('main' or 'admin')
     path: path.resolve(__dirname, "dist"),
     publicPath: "/", // This ensures Webpack serves the files from the root URL
   },
@@ -31,6 +34,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/index.html", // HTML template
+      chunks: ["main"], // Only load 'main' bundle for this HTML
+    }),
+    new HtmlWebpackPlugin({
+      filename: "admin.html", // Separate admin page
+      template: "./src/admin.html",
+      chunks: ["admin"], // Only load 'admin' bundle for this HTML
     }),
     new webpack.HotModuleReplacementPlugin(), // HMR plugin
   ],
