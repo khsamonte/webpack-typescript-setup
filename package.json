@@ -1,22 +1,24 @@
 {
-	"name": "webpack-typescript-setup",
-	"version": "1.0.0",
-	"description": "A basic Webpack and TypeScript setup for modern JavaScript development.",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack",
-		"start": "webpack serve --open"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"html-webpack-plugin": "^5.6.0",
-		"ts-loader": "^9.5.1",
-		"typescript": "^5.6.3",
-		"webpack": "^5.95.0",
-		"webpack-cli": "^5.1.4",
-		"webpack-dev-server": "^5.1.0"
-	}
+  "name": "webpack-typescript-setup",
+  "version": "1.0.0",
+  "description": "A basic Webpack and TypeScript setup for modern JavaScript development.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "terser-webpack-plugin": "^5.3.10",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
 }

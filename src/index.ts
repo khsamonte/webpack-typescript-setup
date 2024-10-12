@@ -7,6 +7,14 @@ document.getElementById("loadGreeting")?.addEventListener("click", () => {
 
 console.log("App is running.");
 
+if (process.env.NODE_ENV === "development") {
+  console.log("Development mode: Detailed logging enabled.");
+}
+
+if (process.env.NODE_ENV === "production") {
+  console.log("Production mode: Optimized build.");
+}
+
 // Enable HMR
 if (module.hot) {
   module.hot.accept();
