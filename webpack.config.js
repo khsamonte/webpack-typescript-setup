@@ -1,3 +1,5 @@
+// Since we are using common, dev, and prod, this config is no longer in use.
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // Already installed plugin
 const webpack = require("webpack"); // We'll use this for the HMR plugin
